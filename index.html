@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Licitación CTEPS (Con Documentos Propios y Análisis Chuleable)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #3498db;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+        h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #16a085;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        li:hover {
+            background-color: #e0e6e8;
+        }
+        input[type="checkbox"] {
+            margin-right: 15px;
+            transform: scale(1.3);
+            accent-color: #27ae60; /* Color del check */
+            cursor: pointer;
+            flex-shrink: 0; /* Evita que el checkbox se encoja */
+        }
+        label {
+            flex-grow: 1;
+            cursor: pointer;
+        }
+        .status {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            min-width: 120px;
+            text-align: center;
+            margin-left: 10px; /* Espacio entre label y status */
+            flex-shrink: 0; /* Evita que el status se encoja */
+        }
+        .status.pendiente { background-color: #e74c3c; color: white; }
+        .status.atencion { background-color: #f39c12; color: white; }
+        .status.listo { background-color: #2ecc71; color: white; }
+        .status.revisado { background-color: #3498db; color: white; } /* Nuevo estado para análisis */
+
+
+        .nota, .analisis-docs-container { /* Cambiado de .analisis-docs a .analisis-docs-container */
+            background-color: #fff3cd;
+            border-left: 4px solid #ffeeba;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        .analisis-docs-container {
+            background-color: #e8f6f3;
+            border-left-color: #82e0aa;
+        }
+        .analisis-docs-container ul {
+            margin-top: 10px;
+            padding-left: 0; /* Reset padding for inner ul */
+        }
+        .analisis-docs-container li { /* Estilo para los <li> dentro del análisis */
+            background-color: #fdfefe;
+            border-color: #d5dbdb;
+            padding: 8px 12px;
+            font-size: 0.9em;
+            margin-bottom: 8px; /* Menor margen para ítems de análisis */
+        }
+
+        .analisis-docs-container strong { color: #117a65; }
+        .doc-item-analisis-label {
+            font-style: italic;
+            color: #555;
+            flex-grow: 1; /* Para que ocupe el espacio */
+        }
+        .comentario-analisis {
+            color: #777;
+            font-size: 0.9em;
+            margin-left: 28px; /* Alineado con el texto del label */
+            display: block;
+        }
+        .comentario-analisis strong {
+            color: #c0392b; /* Rojo para atención */
+        }
+         .comentario-analisis .ok {
+            color: #27ae60; /* Verde para ok */
+        }
+
+
+        .descripcion-item {
+            font-size: 0.85em;
+            color: #555;
+            display: block;
+            margin-left: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Checklist Licitación CTEPS</h1>
+
+        <div class="analisis-docs-container">
+            <h3>Análisis de Documentos Actuales del Consorcio (Marcar como Revisado)</h3>
+            <p>Basado en la información proporcionada, aquí un resumen de sus documentos y cómo se relacionan con los requisitos de CTEPS. Marque cada punto una vez lo haya revisado y comprendido.</p>
+            <ul>
+                <!-- Javier Murcia -->
+                <li>
+                    <input type="checkbox" id="analisis_javier_rup" data-initial-status-text="POR REVISAR" data-initial-status-class="pendiente">
+                    <label for="analisis_javier_rup" class="doc-item-analisis-label">Certificado del Registro Único de Proponentes (RUP) - Javier</label>
+                    <span class="status pendiente">POR REVISAR</span>
+                    <span class="comentario-analisis">Relacionado con Bloque B. <strong>CTEPS pide "Estados financieros auditados..." explícitamente. El RUP es un resumen.</strong> El ítem de CTEPS para Bloque B se marcará con ATENCIÓN.</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="analisis_javier_subsanatorios" data-initial-status-text="POR REVISAR" data-initial-status-class="pendiente">
+                    <label for="analisis_javier_subsanatorios" class="doc-item-analisis-label">Documentos subsanatorios o aclaratorios - Javier</label>
+                    <span class="status pendiente">POR REVISAR</span>
+                    <span class="comentario-analisis">No es un requisito inicial, sino para posibles correcciones posteriores.</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="analisis_javier_declaraciones" data-initial-status-text="POR REVISAR" data-initial-status-class="pendiente">
+                    <label for="analisis_javier_declaraciones" class="doc-item-analisis-label">Declaraciones y certificaciones varias - Javier</label>
+                    <span class="status pendiente">POR REVISAR</span>
+                    <span class="comentario-analisis">Genérico. CTEPS solicita declaraciones específicas (ej. licenciamiento) que deben prepararse.</span>
+                </li>
+
+                <!-- Julian -->
+                <li>
+                    <input type="checkbox" id="analisis_julian_propuesta" data-initial-status-text="POR REVISAR" data-initial-status-class="pendiente">
+                    <label for="analisis_julian_propuesta" class="doc-item-analisis-label">Propuesta Económica Formal - Julian</label>
+                    <span class="status pendiente">POR REVISAR</span>
+                    <span class="comentario-analisis"><span class="ok">Cubre Bloque G.</span> Se marcará como LISTO (Verificado) en el checklist principal.</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="analisis_julian_objeto" data-initial-status-text="POR REVISAR" data-initial-status-class="pendiente">
+                    <label for="analisis_julian_objeto" class="doc-item-analisis-label">Documentos que acrediten el objeto social y capacidad de ejecución - Julian</label>
+                    <span class="status pendiente">POR REVISAR</span>
+                    <span class="comentario-analisis"><span class="ok">Cubre "Certificado de existencia y representación legal" del Bloque A.</span> Se marcará como LISTO (Verificado).</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="analisis_julian_acuerdo" data-initial-status-text="POR REVISAR" data-initial-status-class="pendiente">
+                    <label for="analisis_julian_acuerdo" class="doc-item-analisis-label">Acuerdo de Consorcio o Unión Temporal (si aplica) - Julian</label>
+                    <span class="status pendiente">POR REVISAR</span>
+                    <span class="comentario-analisis">Fundamental si son consorcio. Aunque no es un ítem de la matriz, es un prerrequisito legal.</span>
+                </li>
+
+                <!-- Gaybriel -->
+                <li>
+                    <input type="checkbox" id="analisis_gaybriel_garantia" data-initial-status-text="POR REVISAR" data-initial-status-class="pendiente">
+                    <label for="analisis_gaybriel_garantia" class="doc-item-analisis-label">Garantía de Seriedad de la Oferta - Gaybriel</label>
+                    <span class="status pendiente">POR REVISAR</span>
+                    <span class="comentario-analisis"><strong>¡ATENCIÓN CRÍTICA! CTEPS (Bloque H) solicita "Póliza única de cumplimiento y responsabilidad civil profesional". Son documentos distintos.</strong> El ítem de CTEPS se marcará con ATENCIÓN.</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="analisis_gaybriel_facultades" data-initial-status-text="POR REVISAR" data-initial-status-class="pendiente">
+                    <label for="analisis_gaybriel_facultades" class="doc-item-analisis-label">Acreditación de facultades del representante legal - Gaybriel</label>
+                    <span class="status pendiente">POR REVISAR</span>
+                    <span class="comentario-analisis">Usualmente contenido en el "Certificado de existencia y representación legal" (cubierto por Julian). Verificar que así sea.</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="analisis_gaybriel_poder" data-initial-status-text="POR REVISAR" data-initial-status-class="pendiente">
+                    <label for="analisis_gaybriel_poder" class="doc-item-analisis-label">Poder debidamente constituido (si aplica) - Gaybriel</label>
+                    <span class="status pendiente">POR REVISAR</span>
+                    <span class="comentario-analisis">Necesario si el representante legal actúa mediante apoderado.</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="analisis_gaybriel_capacidad" data-initial-status-text="POR REVISAR" data-initial-status-class="pendiente">
+                    <label for="analisis_gaybriel_capacidad" class="doc-item-analisis-label">Documentación que soporte la capacidad financiera y organizacional - Gaybriel</label>
+                    <span class="status pendiente">POR REVISAR</span>
+                    <span class="comentario-analisis">Refuerza el punto del RUP y Bloque B. <strong>Recordar que CTEPS pide "Estados financieros auditados..." explícitamente.</strong></span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="nota">
+            <p><strong>Instrucciones del Checklist Principal:</strong> Marque cada ítem a medida que lo complete. El estado cambiará a "LISTO". Si desmarca, volverá a su estado original ("PENDIENTE" o "ATENCIÓN").</p>
+            <p><strong>Importante:</strong> Todos los documentos entregados deben llevar la marca de agua "Uso Educativo" y el respectivo logo de su consorcio. Los requisitos habilitantes (0, A, B, H) marcados como "No cumple" inhabilitan la propuesta.</p>
+        </div>
+
+        <h2>Bloque 0: Condiciones de Presentación (Habilitante)</h2>
+        <ul>
+            <li><input type="checkbox" id="cond0_1" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="cond0_1">Entrega en horario específico (18:55-19:05)</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="cond0_2" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="cond0_2">Sobre sellado</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="cond0_3" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="cond0_3">Firma de todos los integrantes al entregar</label><span class="status pendiente">PENDIENTE</span></li>
+        </ul>
+
+        <h2>Bloque A: Documentación Jurídica Habilitante (Habilitante)</h2>
+        <ul>
+            <li><input type="checkbox" id="docA_1" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docA_1">Carta de presentación</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="docA_2" data-initial-status-text="LISTO (Verificado)" data-initial-status-class="listo" checked><label for="docA_2">Certificado de existencia y representación legal (Cámara de Comercio)</label><span class="status listo">LISTO (Verificado)</span></li>
+            <li><input type="checkbox" id="docA_3" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docA_3">Acta de junta de socios/accionistas (autorización para contratar)</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="docA_4" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docA_4">Antecedentes disciplinarios, fiscales y penales</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="docA_5" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docA_5">Carta de confidencialidad</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="docA_6" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docA_6">Declaración del modelo de licenciamiento del software</label><span class="status pendiente">PENDIENTE</span></li>
+        </ul>
+
+        <h2>Bloque B: Capacidad Financiera (RUP) (Habilitante)</h2>
+        <ul>
+            <li>
+                <input type="checkbox" id="docB_1" data-initial-status-text="ATENCIÓN" data-initial-status-class="atencion">
+                <label for="docB_1">Estados financieros auditados, indicadores liquidez/endeudamiento, firmados por contador (ficticio)</label>
+                <span class="descripcion-item">CTEPS pide explícitamente los estados. El RUP y "documentación de capacidad financiera" que tienen son resúmenes. Asegurar que presentan los documentos completos como se solicita.</span>
+                <span class="status atencion">ATENCIÓN</span>
+            </li>
+        </ul>
+
+        <h2>Bloque C: Experiencia y Recurso Humano (Puntúa 0-5)</h2>
+        <ul>
+            <li><input type="checkbox" id="docC_1" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docC_1">Hojas de vida del equipo</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="docC_2" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docC_2">Diplomas</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="docC_3" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docC_3">Certificaciones técnicas</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="docC_4" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docC_4">Proyectos similares (descripción, evidencia)</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="docC_5" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docC_5">Referencias</label><span class="status pendiente">PENDIENTE</span></li>
+        </ul>
+
+        <h2>Bloque D: Propuesta Técnica (Puntúa 0-5)</h2>
+        <ul>
+            <li><input type="checkbox" id="docD_1" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docD_1">Matriz de trazabilidad de requisitos</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="docD_2" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docD_2">Arquitectura y tecnologías</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="docD_3" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docD_3">Calidad bajo ISO 25010 (documento o sección)</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="docD_4" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docD_4">Metodología y cronograma</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="docD_5" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docD_5">Análisis de riesgos y plan de mitigación (ISO 31000)</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="docD_6" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docD_6">Seguridad alineada a ISO 27001</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="docD_7" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docD_7">Escalabilidad (DevOps / CI-CD) y mantenimiento</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="docD_8" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docD_8">Accesibilidad WCAG 2.1 AA</label><span class="status pendiente">PENDIENTE</span></li>
+            <li><input type="checkbox" id="docD_9" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docD_9">Plan de pruebas</label><span class="status pendiente">PENDIENTE</span></li>
+        </ul>
+
+        <h2>Bloque E: Niveles de Servicio y Soporte (SLA/ANS) (Puntúa 0-5)</h2>
+        <ul>
+            <li><input type="checkbox" id="docE_1" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docE_1">Documento de SLA/ANS (Disponibilidad, tiempos de respuesta, penalidades)</label><span class="status pendiente">PENDIENTE</span></li>
+        </ul>
+
+        <h2>Bloque F: Transferencia de Conocimiento (Puntúa 0-5)</h2>
+        <ul>
+            <li><input type="checkbox" id="docF_1" data-initial-status-text="PENDIENTE" data-initial-status-class="pendiente"><label for="docF_1">Plan de capacitación</label><span class="status pendiente">PENDIENTE</span></li>
+        </ul>
+
+        <h2>Bloque G: Propuesta Económica (Verificación Aritmética)</h2>
+        <ul>
+            <li><input type="checkbox" id="docG_1" data-initial-status-text="LISTO (Verificado)" data-initial-status-class="listo" checked><label for="docG_1">Anexo económico oficial (desglose componentes/servicios, TCO)</label><span class="status listo">LISTO (Verificado)</span></li>
+        </ul>
+
+        <h2>Bloque H: Garantías y Pólizas (Habilitante)</h2>
+        <ul>
+            <li>
+                <input type="checkbox" id="docH_1" data-initial-status-text="ATENCIÓN" data-initial-status-class="atencion">
+                <label for="docH_1">Póliza única de cumplimiento y responsabilidad civil profesional (Ley 80/1993)</label>
+                <span class="descripcion-item">La "Garantía de Seriedad de la Oferta" que tienen NO es este documento. Deben conseguir la Póliza de Cumplimiento.</span>
+                <span class="status atencion">ATENCIÓN</span>
+            </li>
+        </ul>
+
+        <div class="nota">
+            <p><strong>Recordatorio Final:</strong> Revisar la "Nota" al final de la página 3 del documento CTEPS sobre la marca de agua "Uso Educativo" y el respectivo logo de su consorcio en TODOS los documentos. Esto incluye los que ya tienen marcados como "LISTO (Verificado)".</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkboxes = document.querySelectorAll('.container input[type="checkbox"]');
+
+            checkboxes.forEach(checkbox => {
+                // Set initial state for span based on data-attributes
+                const initialStatusText = checkbox.dataset.initialStatusText || 'PENDIENTE';
+                const initialStatusClass = checkbox.dataset.initialStatusClass || 'pendiente';
+                const statusSpan = checkbox.closest('li').querySelector('.status');
+                if (statusSpan) {
+                    statusSpan.textContent = initialStatusText;
+                    statusSpan.className = `status ${initialStatusClass}`;
+                }
+
+                checkbox.addEventListener('change', function () {
+                    const listItem = this.closest('li');
+                    if (!listItem) return;
+
+                    const currentStatusSpan = listItem.querySelector('.status');
+                    if (!currentStatusSpan) return;
+
+                    // Determinar el estado 'checked'
+                    let checkedStatusText = 'LISTO';
+                    let checkedStatusClass = 'listo';
+
+                    // Si el checkbox pertenece a la sección de análisis, el estado 'checked' es 'REVISADO'
+                    if (listItem.closest('.analisis-docs-container')) {
+                        checkedStatusText = 'REVISADO';
+                        checkedStatusClass = 'revisado';
+                    }
+
+
+                    if (this.checked) {
+                        currentStatusSpan.textContent = checkedStatusText;
+                        currentStatusSpan.className = `status ${checkedStatusClass}`;
+                    } else {
+                        const initialText = this.dataset.initialStatusText || 'PENDIENTE'; // Default to PENDIENTE if no data-attribute
+                        const initialClass = this.dataset.initialStatusClass || 'pendiente';
+                        currentStatusSpan.textContent = initialText;
+                        currentStatusSpan.className = `status ${initialClass}`;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
